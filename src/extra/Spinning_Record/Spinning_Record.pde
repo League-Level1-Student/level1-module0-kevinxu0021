@@ -1,14 +1,14 @@
+import ddf.minim.*;
+Minim minim;
+AudioPlayer song;
 PImage pictureOfRecord;  //as member variable
   int amount = 0;
 void setup(){
   size(1920, 1080);
-  
 pictureOfRecord= loadImage("Titan X.png");  //in setup method  
+minim = new Minim(this);  
+ song = minim.loadFile("429155__greek555__5-vocals-loops-128-bpm.mp3", 512);
 
- 
-  
-  
-  
   
   
   
@@ -19,10 +19,15 @@ pictureOfRecord= loadImage("Titan X.png");  //in setup method
 void draw(){
 background(255,255,255);
   if(mousePressed){
-    amount++;
+    amount+=180;
    rotateImage(pictureOfRecord, amount);
   image(pictureOfRecord, 0, 0);
   }
+  if(mousePressed){
+song.play();}
+else{
+song.pause();}
+  
   
   
   
