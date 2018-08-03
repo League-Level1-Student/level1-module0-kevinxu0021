@@ -1,3 +1,4 @@
+
 import java.util.Random;
 
 import org.jointheleague.graphical.robot.Robot;
@@ -10,7 +11,10 @@ public class Houses {
 		robot.setX(0);
 		robot.setY(550);
 		robot.setSpeed(10);
-		drawHouses();
+		for (int i = 0; i < 9; i++) {
+			drawHouses();	
+		}
+		
 
 	}
 
@@ -26,6 +30,7 @@ public class Houses {
 			robot.move(120);
 		} else if (rand1 == 2) {
 			robot.move(250);
+			rand2 = 0;
 		}
 		if (rand2 == 0) {
 			flatRoof();
@@ -42,6 +47,7 @@ public class Houses {
 		robot.turn(270);
 		robot.setPenColor(0, 255, 0);
 		robot.move(50);
+		robot.turn(270);
 	}
 
 	public static void flatRoof() {
@@ -53,7 +59,7 @@ public class Houses {
 	public static void pointyRoof() {
 		robot.turn(45);
 		robot.move(25);
-		robot.move(90);
+		robot.turn(90);
 		robot.move(25);
 		robot.turn(45);
 	}
